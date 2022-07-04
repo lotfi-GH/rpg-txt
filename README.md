@@ -1,2 +1,2 @@
-# rpg_txt
+# RPG-txt
 Textual RPG
