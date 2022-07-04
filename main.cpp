@@ -10,6 +10,7 @@ int main()
 */
 //#include "main.h"
 #include "battle.h"
+#include "map.h"
 #include <iostream>
 #include<windows.h>
 /*
@@ -37,8 +38,100 @@ int main()
 	items[2] = "DEFENSE++";
 	int player_attack = 5;
 	int enemy_attack = 10;
+	int location = 0;
+	Sleep(1000);
+	displayLocation(location);
+	Sleep(2000);
+	std::cout << "You arrived to a city.You have been called to help them get rid of a demon \n";
+	Sleep(3000);
+	std::cout << "You directly went to see the king\n";
+	Sleep(3000);
+	std::cout << R"(
+                    .
+                   / \
+                  _\ /_
+        .     .  (,'v`.)  .     .
+        \)   ( )  ,' `.  ( )   (/
+         \`. / `-'     `-' \ ,'/
+          : '    _______    ' :
+          |  _,-'  ,-.  `-._  |
+          |,' ( )__`-'__( ) `.|
+          (|,-,'-._   _.-`.-.|)
+          /  /<( o)> <( o)>\  \
+          :  :     | |     :  :
+          |  |     ; :     |  |
+          |  |    (.-.)    |  |
+          |  |  ,' ___ `.  |  |
+          ;  |)/ ,'---'. \(|  :
+      _,-/   |/\(       )/\|   \-._
+_..--'.-(    |   `-'''-'   |    )-.`--.._
+         `.  ;`._________,':  ,'
+        ,' `/               \'`.
+             `------.------'           
+
+)" << "\n";
+	Sleep(3000);
+	
+	std::cout << "KING : Thank you for coming! We were waiting for you!\n";
+	Sleep(3000);
+	std::cout << "KING : We'll directly get to the essential!\n";
+	Sleep(3000);
+	std::cout << "KING : The demon was last spot in the forest!\n";
+	Sleep(3000);
+	std::cout << "KING : Goodluck!\n";
+	Sleep(3000);
+
+	displayLocation(location);
+	while (location == 0) {
+		std::cout << "Where do you want to go now?\n";
+		std::cout << "(0)City                      (1) Forest\n";
+		std::cout << "Type the number corresponding to your destination!\n";
+		std::cin >> location;
+
+		if (location != 1) {
+			displayLocation(location);
+			location = 0;
+		}
+	}
+	//if (location != 1) { location = 1; }
+	
+	if(location==1){
+	Sleep(2000);
+	std::cout << "...\n";
+	Sleep(2000);
+	std::cout << "You went to the forst\n";
+	Sleep(3000);
+	std::cout << "...\n";
+	displayLocation(location);
+	Sleep(3000);
+	std::cout << "...\n";
+	Sleep(3000);
+	std::cout << "You heard a sound\n";
+	Sleep(3000);
+	std::cout << "...\n";
+	Sleep(3000);
+	std::cout << R"(
+                            ,-.
+       ___,---.__          /'|`\          __,---,___
+    ,-'    \`    `-.____,-'  |  `-.____,-'    //    `-.
+  ,'        |           ~'\     /`~           |        `.
+ /      ___//              `. ,'          ,  , \___      \
+|    ,-'   `-.__   _         |        ,    __,-'   `-.    |
+|   /          /\_  `   .    |    ,      _/\          \   |
+\  |           \ \`-.___ \   |   / ___,-'/ /           |  /
+ \  \           | `._   `\\  |  //'   _,' |           /  /
+  `-.\         /'  _ `---'' , . ``---' _  `\         /,-'
+     ``       /     \    ,='/ \`=.    /     \       ''
+             |__   /|\_,--.,-.--,--._/|\   __|
+             /  `./  \\`\ |  |  | /,//' \,'  \
+            /   /     ||--+--|--+-/-|     \   \
+           |   |     /'\_\_\ | /_/_/`\     |   |
+            \   \__, \_     `~'     _/ .__/   /
+             `-._,-'   `-._______,-'   `-._,-'
+
+)" << "\n";
 	Sleep(500);
-	std::cout << "		   A WILD ENEMY APPEARS!";
+	std::cout << "		   A DEMON APPEARS!";
 	Sleep(500);
 	std::cout << R"(
 
@@ -100,8 +193,8 @@ int main()
 		}
 
 	}
-
-
+	}
+	
 	Sleep(10000);
 	 //battle(hp, enemy, items, player_attack, enemy_attack);
 	//playerTurn()
