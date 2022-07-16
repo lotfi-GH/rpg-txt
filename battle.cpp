@@ -13,14 +13,14 @@
 void displayChoices(int hp, int enemy) {
 	std::cout << R"(
 		Your turn!
-		Choose one action from the menu by typing "atk" or "items" in the console
+		Choose one action from the menu by typing its number in the console!
 		--------------------------------------------------------
 		Player HP : )"<<hp <<R"(%                      Enemy HP : )" <<enemy << R"(%
 		--------------------------------------------------------
 		 -------ACTIONS-----------------------------------------
 		|                                                       |	
 		|   -------------               ---------------         |
-		|  |   ATTACK    |             |     ITEMS     |        |
+		|  | (1) ATTACK  |             | (2)  ITEMS    |        |
 		|   -------------               ---------------	        |
 		|                                                       |
 		 -------------------------------------------------------
@@ -41,12 +41,13 @@ void displayItems(std::string items[3]) {
 
 void playerTurn(int *hp, int *enemy, std::string items[3], int *player_attack, int *enemy_attack)
 {	
-	std::string choice;
+	//std::string choice;
+	int choice;
 	int item;
 	displayChoices(*hp, *enemy);
 	std::cin >> choice;
-	std::transform(choice.begin(), choice.end(), choice.begin(), std::tolower);
-	if (choice == "atk"){
+	//std::transform(choice.begin(), choice.end(), choice.begin(), std::tolower);
+	if (choice == 1){
 		*enemy -= *player_attack;
 		Sleep(1000);
 		std::cout << "You inflicted "<< *player_attack <<  "% damage to your enemy!  \n";
@@ -75,33 +76,14 @@ void playerTurn(int *hp, int *enemy, std::string items[3], int *player_attack, i
 	}
 }
 
-void enemyTurn(int *hp, int *enemy, int *player_attack, int *enemy_attack) {
+void enemyTurn(int *hp, int *enemy, int *player_attack, int *enemy_attack, std::string sprite) {
 	Sleep(1000);
 	std::cout << "		--------------------------------------------------------\n";
 	std::cout << "		Player HP : " <<*hp <<"%                      Enemy HP : " << *enemy << "% \n";
 	std::cout << "		--------------------------------------------------------\n";
 	Sleep(1000);
 	std::cout << "Your enemy's turn!\n";
-	std::cout << R"(
-                            ,-.
-       ___,---.__          /'|`\          __,---,___
-    ,-'    \`    `-.____,-'  |  `-.____,-'    //    `-.
-  ,'        |           ~'\     /`~           |        `.
- /      ___//              `. ,'          ,  , \___      \
-|    ,-'   `-.__   _         |        ,    __,-'   `-.    |
-|   /          /\_  `   .    |    ,      _/\          \   |
-\  |           \ \`-.___ \   |   / ___,-'/ /           |  /
- \  \           | `._   `\\  |  //'   _,' |           /  /
-  `-.\         /'  _ `---'' , . ``---' _  `\         /,-'
-     ``       /     \    ,='/ \`=.    /     \       ''
-             |__   /|\_,--.,-.--,--._/|\   __|
-             /  `./  \\`\ |  |  | /,//' \,'  \
-            /   /     ||--+--|--+-/-|     \   \
-           |   |     /'\_\_\ | /_/_/`\     |   |
-            \   \__, \_     `~'     _/ .__/   /
-             `-._,-'   `-._______,-'   `-._,-'
-
-)" << "\n";
+	std::cout << sprite << "\n";
 	*hp -= *enemy_attack;
 	Sleep(1000);
 	std::cout << "Your enemy infilcted " << *enemy_attack << "% damage to you!  \n";

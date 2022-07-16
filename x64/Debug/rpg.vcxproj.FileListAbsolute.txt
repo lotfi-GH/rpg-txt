@@ -1,1 +1,2 @@
 C:\Users\lotfi\Desktop\share\learncpp\rpg\x64\Debug\rpg.exe
+C:\Users\lotfi\Source\Repos\rpg-txt\x64\Debug\rpg.exe
