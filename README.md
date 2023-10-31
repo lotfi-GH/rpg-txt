@@ -14,6 +14,6 @@ The code base could be used to implement a long narative textual RPG
 * Run rpg.exe located in rpg-txt/x64/Release/
 
 
-  The demo could also be found on itch.io : https://ryuuv.itch.io/demon-hunter
+The demo could also be found on itch.io : https://ryuuv.itch.io/demon-hunter
 
-  Don't hesitate to give it a try !
+Don't hesitate to give it a try !
