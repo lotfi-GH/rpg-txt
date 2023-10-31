@@ -6,7 +6,7 @@ The game demo runs on a CMD console and displays texts and ASCII visuals
 The code base could be used to implement a long narative textual RPG
 
 ## Features
-* Adventure loop where the player can select a location to go to$
+* Adventure loop where the player can select a location to go
 * Battle loop where the player fights against a demon
 
 ## How to launch the game
